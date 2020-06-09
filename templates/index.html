@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>You Tube</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div style="padding: 10px;">
+          <h3 style="text-align: left;">Enter Channel Name</h3>
+        <form action="/post" method="POST">
+          <textarea rows="5" cols="50" name="input_text">{{r.old_data}}</textarea>
+    <div style="text-align: left;">
+      <Button style="background: blue;color: white;border: 1px;padding: 6px 16px;border-radius: 5px;box-align: c">Submit</Button></div>
+      </form>
+    </div>
+    
+    <div style="padding: 15px;">
+        <h3 style="text-align: left;">Channel Name</h3>
+      <textarea rows="5" cols="50">{{r.data.Channel_Name}}</textarea>
+    </div>
+    <div style="padding: 18px;">
+        <h3 style="text-align: center;">Channel Description</h3>
+         <textarea rows="8" cols="70">{{r.data.Video_Description}}</textarea>
+    </div>
+  </div>
+
+    <div class="col-md-4">
+      <div style="padding: 18px;">
+        <h3 style="text-align: center;">Total Subscribers</h3>
+         <textarea rows="3" cols="50">{{r.data.Subscribers}}</textarea>
+      </div>
+    
+
+      <!-- <div class="col-md-4"> -->
+        <div style="padding: 18px;">
+          <h3 style="text-align: center2;">Videos Uploaded</h3>
+           <textarea rows="3" cols="50">{{r.data.Total_Videos}}</textarea>
+        </div>
+
+      <div style="padding: 18px;">
+        <h3 style="text-align: center;">View Counts</h3>
+        <textarea rows="3" cols="50">{{r.data.Total_Views}}</textarea>
+      </div>
+
+       
+ 
+        <!-- <div style="padding: 18px;">
+          <h3 style="text-align: center;">ENTITIES</h3>
+           <textarea rows="3" cols="50">{% for i in r.data.entities %}{{i}}, {%endfor%}</textarea>
+      </div> -->
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
