@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    ::placeholder{
+      color: white;
+    }
+  </style>
+  <title>You Tube</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+</head>
+
+<body style = "background-image: url('https://i.pinimg.com/originals/8a/a4/33/8aa43318b59561b47568faf4c1f80e6f.jpg');background-repeat: no-repeat; width: 100% ;font-family : sans-serif;">
+  <div>
+    <header style="background-color: black;height: 50%;text-align: center; font-size:xx-large;color: white;">Extract YouTube Video Details</header>
+  </div>
+<div style="overflow-x: hidden;overflow-y: auto;" class="container">
+  <div class="row">
+
+    <div style="padding: 5px;">
+      <!-- <div class="col-md-3">
+       <h3 style="text-align: match-parent;width: 100%; color: white;">Enter Video Title</h3></div> -->
+
+           <form action="/post" method="POST">
+            <div class="col-md-9">
+              <!-- <input type="text" name="name" id="name" placeholder="Enter Video Title"> -->
+            <div>
+           <textarea style = "background-color: transparent; color: white; font-size: large;" rows="1" cols="80" name="input_text" placeholder="Enter Video Title">{{r.old_data}}</textarea>
+          </div>
+
+            
+            
+           <div style="text-align: left;">
+            <Button style="background: blue;color: white;border: 1px;padding: 6px 16px;border-radius: 5px;width : 10%;box-align: center">Submit</Button>
+          </div>
+          </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+    <div style="padding: 15px;">
+        <h3 style="text-align: center; width: 50%;color: white;">Channel Name</h3>
+      <textarea style = "background-color: transparent; color: white; font-size: large;" rows="3" cols="50"placeholder = "Channel Name">{{r.data.Channel_Name}}</textarea>
+    </div>
+ 
+    <div style="padding:15px;">
+      <h3 style="text-align: center;width: 50%;color:white">Video Description</h3>
+    <textarea style = "background-color: transparent;color: white;font-size: large;"rows="3" cols="50"placeholder="Vide Description">{{r.data.Video_Description}}</textarea>
+    </div>
+
+    <div style="padding: 18px;">
+        <h3 style="text-align: center;width: 50%;color:white">Top Comments on Video</h3>
+         <textarea style = "background-color:transparent; color: white; font-size: large;" rows="8" cols="50" placeholder="Top 100 Comments on Video">{%for i in r.data.Top_Comments %}{{i}}, {%endfor%}</textarea>
+    </div>
+  </div>
+
+<!-- 
+  <div class = "col-md-4">
+
+    <img src="https://i.ytimg.com/vi/nYh-n7EOtMA/hqdefault.jpg" style="margin:auto; width:200px;display:block" />
+
+  </div> -->
+
+    <div class="col-md-6">
+
+      <div style="padding: 18px;">
+        <h3 style="text-align: center;color: white; width: 50%;">Total Subscribers</h3>
+         <textarea style = "background-color: transparent; color: white; font-size: large;" rows="3" cols="match-parent" placeholder="Total Subscribers">{{r.data.Subscribers}}</textarea>
+      </div>
+      <!-- <div class="col-md-4"> -->
+        <div style="padding: 18px;">
+          <h3 style="text-align: center;color: white;width: 50%;">Total Views</h3>
+           <textarea style = "background-color:transparent; color: white; font-size: large;"  rows="3" cols="match-parent" placeholder="Total Views on Video">{{r.data.Total_Views}}</textarea>
+        </div>
+
+      <div style="padding: 18px;">
+        <h3 style="text-align: center;color: white;width: 50%;">Total Likes</h3>
+        <textarea style = "background-color: transparent; color: white; font-size: large;" rows="3" cols="match-parent" placeholder="Total Likes on Video">{{r.data.Total_Likes}}</textarea>
+      </div>
+
+      <div style="padding: 18px;">
+        <!-- <h3 style="text-align: center;color: white;">View Counts</h3> -->
+        <h3 style="text-align: center;width: 50%; color: white;">Total Comments</h3>
+        <textarea style = "background-color: transparent; color: white; font-size: large;" rows="3" cols="match-parent" placeholder="Total Comments on Video">{{r.data.Total_comments}}</textarea>
+      </div>
+      </div> 
+
+    </div>
+  </div>
+</body>
+</html>
